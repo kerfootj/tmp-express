@@ -1,16 +1,13 @@
 const express = require('express');
 const router = express.Router();
 
-const requests = []
 
 router.get('/here', (req, res) => {
-  requests.push({body: req.body, time: Date(Date.now())})
-  res.json(requests);
+  res.json({ make: 'Subaru', model: 'WRX', year: 2020, color: 'blue' });
 });
 
 router.post('/here', (req, res) => {
-  res.json({body: req.body, time: Date(Date.now())});
-
+  res.send('Thanks!');
 });
 
 module.exports = router;
